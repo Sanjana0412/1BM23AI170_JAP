@@ -1,0 +1,46 @@
+public class gymmem {
+    String name;
+    int age;
+    boolean status;
+    int duration;
+
+    gymmem(String name) {
+        this.name = name;
+    }
+
+    void calculate() {
+        int mem = this.duration * 50;
+        System.out.println("the fee is" + mem);
+    }
+
+    void display() {
+        System.out.println("the Name" + this.name);
+        System.out.println("the age" + this.age);
+        System.out.println("the status" + this.status);
+        System.out.println("the duration" + this.duration);
+    }
+
+    public static void main(String[] args) {
+        gymmem[] m = new gymmem[3];
+
+        for(int i = 0; i < m.length; ++i) {
+            m[i] = new gymmem("m" + (i + 1));
+        }
+
+        for(gymmem mm : m) {
+            System.out.println("welcome to Gym");
+            Scanner scan = new Scanner(System.in);
+            System.out.print("enter the name");
+            mm.name = scan.nextLine();
+            System.out.print("enter the age");
+            mm.age = scan.nextInt();
+            System.out.print("enter the status");
+            mm.status = scan.nextBoolean();
+            System.out.print("enter the duration");
+            mm.duration = scan.nextInt();
+            mm.calculate();
+            mm.display();
+        }
+
+    }
+}
