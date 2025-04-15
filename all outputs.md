@@ -22,3 +22,6 @@ program 3b output
 
 PROGRAM 4A OUTPUT
 ![image](https://github.com/user-attachments/assets/944a2913-67ec-4cd1-b233-a4e9a89a293b)
+
+PROGRAM 4B OUTPUT
+![image](https://github.com/user-attachments/assets/fcccaaf5-6ae7-4a5b-a064-5fef8321fabc)
