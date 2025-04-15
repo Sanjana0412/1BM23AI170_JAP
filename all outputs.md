@@ -19,3 +19,6 @@ program 3a output
 program 3b output
 
 ![image](https://github.com/user-attachments/assets/8a1d55d0-f2d9-402e-9561-e2362a8eae06)
+
+PROGRAM 4A OUTPUT
+![image](https://github.com/user-attachments/assets/944a2913-67ec-4cd1-b233-a4e9a89a293b)
