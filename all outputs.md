@@ -21,7 +21,17 @@ program 3b output
 ![image](https://github.com/user-attachments/assets/8a1d55d0-f2d9-402e-9561-e2362a8eae06)
 
 PROGRAM 4A OUTPUT
+
 ![image](https://github.com/user-attachments/assets/944a2913-67ec-4cd1-b233-a4e9a89a293b)
 
 PROGRAM 4B OUTPUT
+
 ![image](https://github.com/user-attachments/assets/fcccaaf5-6ae7-4a5b-a064-5fef8321fabc)
+
+program 5 output
+
+![image](https://github.com/user-attachments/assets/b9e0b501-a182-46c0-996a-2030fe324230)
+
+program 7 output
+
+![image](https://github.com/user-attachments/assets/9e12a522-a3bb-4a59-b84d-bcd37aa0cc55)
