@@ -35,3 +35,12 @@ program 5 output
 program 7 output
 
 ![image](https://github.com/user-attachments/assets/9e12a522-a3bb-4a59-b84d-bcd37aa0cc55)
+
+program 6
+
+![image](https://github.com/user-attachments/assets/e9df4012-74f0-4598-83ee-e4c0775e415c)
+
+program 8
+
+![image](https://github.com/user-attachments/assets/cf0ba87e-30a8-43a0-b060-ff775662447e)
+
