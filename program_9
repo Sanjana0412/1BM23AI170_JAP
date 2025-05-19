@@ -1,41 +1,48 @@
 package BM23AI170;
-import java.util.ArrayList;
-
 interface StackOperations {
     void push(int item);
     int pop();
-    void display();
+    boolean isEmpty();
+    boolean isFull();
 }
-
 
 class FixedLengthStack implements StackOperations {
     private int[] stack;
     private int top;
+    private int capacity;
 
     public FixedLengthStack(int size) {
         stack = new int[size];
+        capacity = size;
         top = -1;
     }
 
     public void push(int item) {
-        if (top == stack.length - 1) {
-            System.out.println("Stack Overflow (Fixed)");
-        } else {
-            stack[++top] = item;
+        if (isFull()) {
+            System.out.println("Stack Overflow");
+            return;
         }
+        stack[++top] = item;
     }
 
     public int pop() {
-        if (top == -1) {
-            System.out.println("Stack Underflow (Fixed)");
+        if (isEmpty()) {
+            System.out.println("Stack Underflow");
             return -1;
-        } else {
-            return stack[top--];
         }
+        return stack[top--];
+    }
+
+    public boolean isEmpty() {
+        return top == -1;
+    }
+
+    public boolean isFull() {
+        return top == capacity - 1;
     }
 
     public void display() {
-        if (top == -1) {
+        if (isEmpty()) {
             System.out.println("Stack is empty (Fixed)");
             return;
         }
@@ -47,65 +54,95 @@ class FixedLengthStack implements StackOperations {
     }
 }
 
-
-
 class DynamicLengthStack implements StackOperations {
-    private ArrayList<Integer> stack;
+    private int[] stack;
+    private int top;
+    private int capacity;
 
-    public DynamicLengthStack() {
-        stack = new ArrayList<>();
+    public DynamicLengthStack(int size) {
+        stack = new int[size];
+        capacity = size;
+        top = -1;
     }
 
     public void push(int item) {
-        stack.add(item);
+        if (isFull()) {
+            resize();
+        }
+        stack[++top] = item;
+    }
+
+    private void resize() {
+        capacity *= 2;
+        int[] newStack = new int[capacity];
+        System.arraycopy(stack, 0, newStack, 0, stack.length);
+        stack = newStack;
+        System.out.println("Stack resized to capacity: " + capacity);
     }
 
     public int pop() {
-        if (stack.isEmpty()) {
-            System.out.println("Stack Underflow (Dynamic)");
+        if (isEmpty()) {
+            System.out.println("Stack Underflow");
             return -1;
-        } else {
-            return stack.remove(stack.size() - 1);
         }
+        return stack[top--];
+    }
+
+    public boolean isEmpty() {
+        return top == -1;
+    }
+
+    public boolean isFull() {
+        return top == capacity - 1;
     }
 
     public void display() {
-        if (stack.isEmpty()) {
+        if (isEmpty()) {
             System.out.println("Stack is empty (Dynamic)");
             return;
         }
         System.out.print("Dynamic Stack: ");
-        for (int item : stack) {
-            System.out.print(item + " ");
+        for (int i = 0; i <= top; i++) {
+            System.out.print(stack[i] + " ");
         }
         System.out.println();
     }
 }
 
-
-public class StackDemo {
+public class Interface {
     public static void main(String[] args) {
-        StackOperations stack;
+        StackOperations fixedStack = new FixedLengthStack(5);
+        StackOperations dynamicStack = new DynamicLengthStack(5);
 
+        System.out.println("Using Fixed-Length Stack:");
+        testStack(fixedStack);
 
-        stack = new FixedLengthStack(3);
-        stack.push(10);
-        stack.push(20);
-        stack.push(30);
-        stack.push(40);
-        stack.display();
-        stack.pop();
-        stack.display();
+        System.out.println("\nUsing Dynamic-Length Stack:");
+        testStack(dynamicStack);
+    }
 
-        System.out.println();
+    public static void testStack(StackOperations stack) {
+        for (int i = 1; i <= 7; i++) {
+            System.out.println("Pushing: " + i);
+            stack.push(i);
+        }
 
-        
-        stack = new DynamicLengthStack();
-        stack.push(100);
-        stack.push(200);
-        stack.push(300);
-        stack.display();
-        stack.pop();
-        stack.display();
+        if (stack instanceof FixedLengthStack) {
+            ((FixedLengthStack) stack).display();
+        } else if (stack instanceof DynamicLengthStack) {
+            ((DynamicLengthStack) stack).display();
+        }
+
+        System.out.println("Popping elements:");
+        for (int i = 0; i < 3; i++) {
+            int popped = stack.pop();
+            System.out.println("Popped: " + popped);
+        }
+
+        if (stack instanceof FixedLengthStack) {
+            ((FixedLengthStack) stack).display();
+        } else if (stack instanceof DynamicLengthStack) {
+            ((DynamicLengthStack) stack).display();
+        }
     }
 }
