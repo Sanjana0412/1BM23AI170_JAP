@@ -46,6 +46,11 @@
 
 # program 9
 
-![image](https://github.com/user-attachments/assets/38ac5e4e-548b-4102-acc2-ff696d10a2fc)
+
+
+# program 10
+
+![image](https://github.com/user-attachments/assets/072aad6d-e178-4df5-9073-03bbcf70f8cb)
+
 
 
