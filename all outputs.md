@@ -51,7 +51,8 @@
 
 # program 10
 
-![image](https://github.com/user-attachments/assets/072aad6d-e178-4df5-9073-03bbcf70f8cb)
+![image](https://github.com/user-attachments/assets/bb564169-4825-4f85-9415-47dcf862f2f2)
+
 
 
 
